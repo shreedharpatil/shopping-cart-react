@@ -58,7 +58,7 @@ removeProductFromCart(product){
 }
 
 modifyProductQuantity(evt, product){
-  if(evt.target.value < 0) return;
+  if(evt.target.value < 1) return;
   var index = this.state.cart.findIndex(p => p.id === product.id);
 
   if(index >= 0){
