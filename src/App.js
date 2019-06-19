@@ -60,11 +60,11 @@ removeProductFromCart(product){
 modifyProductQuantity(evt, product){
   if(evt.target.value < 1) return;
   var index = this.state.cart.findIndex(p => p.id === product.id);
-
+ 
   if(index >= 0){
     var cartProducts = this.state.cart.slice();
     var updatedProduct = cartProducts[index];
-    updatedProduct.units = evt.target.value;
+    updatedProduct.units = parseInt(evt.target.value);
     cartProducts[index] = updatedProduct;
     this.setState({ cart : cartProducts });
   }
